@@ -462,78 +462,6 @@ python -m admin.cli backup-db
 python -m admin.cli world-stats
 ```
 
----
-
-## Project Structure
-
-```
-shards_of_eternity/
-
-   admin/                  # Admin CLI and tools
-      __init__.py
-      cli.py             # Command-line interface
-
-   characters/            # Character system
-      __init__.py
-      character.py       # Character creation and management
-      stats.py          # Stat calculations
-      inventory.py      # Inventory system
-
-   combat/               # Combat system
-      __init__.py
-      system.py        # Main combat engine
-      abilities.py     # Special abilities
-      enemies.py       # Enemy definitions
-
-   config/              # Configuration
-      __init__.py
-      settings.py      # Settings management (Pydantic)
-
-   database/            # Database layer
-      __init__.py
-      models.py        # SQLAlchemy ORM models
-      migrations.py    # Database migrations
-
-   llm/                 # LLM integration
-      __init__.py
-      generator.py     # Main LLM generator
-      providers.py     # Provider-specific clients
-      prompts.py       # Prompt templates
-
-   network/             # Networking
-      __init__.py
-      master_server.py # Master server for discovery
-      peer.py          # P2P client
-      protocol.py      # Network protocol
-
-   tui/                 # Text User Interface
-      __init__.py
-      main_screen.py   # Main menu
-      character_screen.py
-      combat_screen.py
-      world_screen.py
-
-   world/               # World systems
-      __init__.py
-      locations.py     # Location definitions
-      shards.py        # Crystal Shard system
-      factions.py      # Faction system
-      reality.py       # Reality alteration system
-
-   utils/               # Utilities
-      __init__.py
-      logger.py        # Logging configuration
-      crypto.py        # Encryption utilities
-
-   .env.example         # Example environment variables
-   main.py             # Main game entry point
-   run_server.py       # Server startup script
-   requirements.txt    # Python dependencies
-   README.md          # This file
-```
-
----
-
 ## Development
 
 ### Setting Up Development Environment
@@ -712,8 +640,8 @@ SOFTWARE.
 
 ### Development Team
 
-- **Lead Developer**: Matt Olander 
-- **Game Design**: J.T. Nixon 
+- **Lead Developer**: Matt Olander
+- **Game Design**: J.T. Nixon
 
 ### Technologies & Libraries
 
@@ -729,7 +657,6 @@ SOFTWARE.
 
 ### Inspiration
 
-Inspired by:
 - **Dark Souls** series - Combat mechanics and difficulty
 - **Destiny** - Shared world, raids, and loot
 - **AI Dungeon** - LLM-powered storytelling
@@ -779,9 +706,8 @@ Inspired by:
 ### Getting Help
 
 - **Documentation**: Check this README and code comments
-- **Issues**: [GitHub Issues](https://github.com/yourusername/shards_of_eternity/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/shards_of_eternity/discussions)
-- **Discord**: [Join our server](#) (coming soon)
+- **Issues**: [GitHub Issues](https://github.com/nixreborn/aetheris/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/nixreborn/aetheris/discussions)
 
 ### Reporting Bugs
 
@@ -834,8 +760,6 @@ A: Faction is chosen at character creation and is permanent (for now).
 **Shards of Eternity**
 
 *Reality is fragile. The shards await. Your legend begins.*
-
-[GitHub](https://github.com/yourusername/shards_of_eternity) " [Documentation](#) " [Discord](#)
 
 Made with passion and Python
 
