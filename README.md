@@ -829,8 +829,6 @@ A: Faction is chosen at character creation and is permanent (for now).
 
 ---
 
-<div align="center">
-
 **Shards of Eternity**
 
 *Reality is fragile. The shards await. Your legend begins.*
@@ -838,5 +836,3 @@ A: Faction is chosen at character creation and is permanent (for now).
 [GitHub](https://github.com/yourusername/shards_of_eternity) " [Documentation](#) " [Discord](#)
 
 Made with passion and Python
-
-</div>
