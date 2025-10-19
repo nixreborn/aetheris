@@ -1,0 +1,150 @@
+2025-10-18 23:28:16,669 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-18 23:28:16,669 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-18 23:28:16,682 - database - INFO - Database initialized successfully
+2025-10-18 23:28:16,699 - __main__ - INFO - No game data found. Seeding initial data...
+2025-10-18 23:28:16,699 - __main__ - INFO - Initializing game data...
+2025-10-18 23:28:16,700 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-18 23:28:16,703 - database - INFO - Database initialized successfully
+2025-10-18 23:28:16,703 - __main__ - INFO - Seeding Crystal Shards...
+2025-10-18 23:28:16,716 - __main__ - INFO - Successfully created 12 Crystal Shards
+2025-10-18 23:28:16,716 - __main__ - INFO - Seeding locations...
+2025-10-18 23:28:16,726 - __main__ - INFO - Successfully created 12 locations
+2025-10-18 23:28:16,727 - __main__ - INFO - Assigning shards to locations...
+2025-10-18 23:28:16,736 - __main__ - INFO - Shards assigned to locations
+2025-10-18 23:28:16,736 - __main__ - INFO - Initializing world state...
+2025-10-18 23:28:16,744 - __main__ - INFO - World state initialized
+2025-10-18 23:28:16,744 - __main__ - INFO - Creating sample NPCs...
+2025-10-18 23:28:16,753 - __main__ - INFO - Successfully created 4 NPCs
+2025-10-18 23:28:16,754 - __main__ - INFO - Game data initialization complete!
+2025-10-18 23:28:16,775 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-18 23:44:04,488 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-18 23:44:04,488 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-18 23:44:04,502 - database - INFO - Database initialized successfully
+2025-10-18 23:44:04,538 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-18 23:54:29,095 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-18 23:54:29,095 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-18 23:54:29,107 - database - INFO - Database initialized successfully
+2025-10-18 23:54:29,144 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-18 23:55:51,726 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-18 23:55:51,726 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-18 23:55:51,739 - database - INFO - Database initialized successfully
+2025-10-18 23:55:51,772 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-18 23:58:51,226 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-18 23:58:51,227 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-18 23:58:51,239 - database - INFO - Database initialized successfully
+2025-10-18 23:58:51,276 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:02:24,401 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:02:24,402 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:02:24,415 - database - INFO - Database initialized successfully
+2025-10-19 00:02:24,452 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:05:40,316 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:05:40,316 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:05:40,331 - database - INFO - Database initialized successfully
+2025-10-19 00:05:40,368 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:06:13,691 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:06:13,691 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:06:13,705 - database - INFO - Database initialized successfully
+2025-10-19 00:06:13,746 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:07:07,307 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:07:07,307 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:07:07,331 - database - INFO - Database initialized successfully
+2025-10-19 00:07:07,371 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:08:56,905 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:08:56,906 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:08:56,918 - database - INFO - Database initialized successfully
+2025-10-19 00:08:56,958 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:09:56,807 - database - ERROR - Database session error: CharacterCreator.create_character() got an unexpected keyword argument 'session'
+2025-10-19 00:09:56,811 - __main__ - ERROR - Error creating character: CharacterCreator.create_character() got an unexpected keyword argument 'session'
+2025-10-19 00:11:35,053 - database - ERROR - Database session error: CharacterCreator.create_character() got an unexpected keyword argument 'session'
+2025-10-19 00:11:35,054 - __main__ - ERROR - Error creating character: CharacterCreator.create_character() got an unexpected keyword argument 'session'
+2025-10-19 00:13:56,976 - __main__ - INFO - Autosave completed
+2025-10-19 00:21:46,797 - __main__ - INFO - Autosave completed
+2025-10-19 00:22:07,828 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:22:07,829 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:22:07,843 - database - INFO - Database initialized successfully
+2025-10-19 00:22:07,879 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:22:33,877 - characters.character - INFO - Created character: Nix (ID: 5)
+2025-10-19 00:22:33,893 - __main__ - ERROR - Error creating character: Instance <Character at 0x170a83363c0> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-10-19 00:23:33,651 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:23:33,652 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:23:33,665 - database - INFO - Database initialized successfully
+2025-10-19 00:23:33,701 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:26:13,816 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:26:13,816 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:26:13,829 - database - INFO - Database initialized successfully
+2025-10-19 00:26:13,866 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:35:50,183 - __main__ - INFO - Starting Shards of Eternity (Offline Mode)...
+2025-10-19 00:35:50,183 - database - INFO - Initializing database: sqlite:///shards_of_eternity.db
+2025-10-19 00:35:50,194 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:35:50,195 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("party_members")
+2025-10-19 00:35:50,195 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,196 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("characters")
+2025-10-19 00:35:50,196 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,196 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("inventory_items")
+2025-10-19 00:35:50,197 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,197 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("crystal_shards")
+2025-10-19 00:35:50,197 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,198 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("shard_ownership")
+2025-10-19 00:35:50,198 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,198 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("world_state")
+2025-10-19 00:35:50,198 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,201 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("locations")
+2025-10-19 00:35:50,201 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,202 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("character_memories")
+2025-10-19 00:35:50,202 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,202 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("parties")
+2025-10-19 00:35:50,203 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,203 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("world_events")
+2025-10-19 00:35:50,203 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-10-19 00:35:50,204 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:35:50,204 - database - INFO - Database initialized successfully
+2025-10-19 00:35:50,220 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:35:50,223 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT crystal_shards.id AS crystal_shards_id, crystal_shards.shard_number AS crystal_shards_shard_number, crystal_shards.shard_name AS crystal_shards_shard_name, crystal_shards.description AS crystal_shards_description, crystal_shards.location_id AS crystal_shards_location_id, crystal_shards.guardian_boss_name AS crystal_shards_guardian_boss_name, crystal_shards.guardian_defeated AS crystal_shards_guardian_defeated, crystal_shards.is_captured AS crystal_shards_is_captured, crystal_shards.owning_faction AS crystal_shards_owning_faction, crystal_shards.captured_at AS crystal_shards_captured_at, crystal_shards.reality_influence AS crystal_shards_reality_influence, crystal_shards.power_level AS crystal_shards_power_level 
+FROM crystal_shards) AS anon_1
+2025-10-19 00:35:50,224 - sqlalchemy.engine.Engine - INFO - [generated in 0.00036s] ()
+2025-10-19 00:35:50,224 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:35:50,246 - __main__ - INFO - Starting Shards of Eternity in offline mode
+2025-10-19 00:35:50,268 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:35:50,270 - sqlalchemy.engine.Engine - INFO - SELECT characters.id AS characters_id, characters.name AS characters_name, characters.is_player AS characters_is_player, characters.created_at AS characters_created_at, characters.updated_at AS characters_updated_at, characters.race AS characters_race, characters.character_class AS characters_character_class, characters.faction AS characters_faction, characters.strength AS characters_strength, characters.dexterity AS characters_dexterity, characters.intelligence AS characters_intelligence, characters.constitution AS characters_constitution, characters.wisdom AS characters_wisdom, characters.charisma AS characters_charisma, characters.health AS characters_health, characters.max_health AS characters_max_health, characters.stamina AS characters_stamina, characters.max_stamina AS characters_max_stamina, characters.mana AS characters_mana, characters.max_mana AS characters_max_mana, characters.level AS characters_level, characters.experience AS characters_experience, characters.souls AS characters_souls, characters.location_id AS characters_location_id 
+FROM characters 
+WHERE characters.is_player = 1
+2025-10-19 00:35:50,270 - sqlalchemy.engine.Engine - INFO - [generated in 0.00058s] ()
+2025-10-19 00:35:50,272 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:35:52,041 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:35:52,042 - sqlalchemy.engine.Engine - INFO - SELECT characters.id AS characters_id, characters.name AS characters_name, characters.is_player AS characters_is_player, characters.created_at AS characters_created_at, characters.updated_at AS characters_updated_at, characters.race AS characters_race, characters.character_class AS characters_character_class, characters.faction AS characters_faction, characters.strength AS characters_strength, characters.dexterity AS characters_dexterity, characters.intelligence AS characters_intelligence, characters.constitution AS characters_constitution, characters.wisdom AS characters_wisdom, characters.charisma AS characters_charisma, characters.health AS characters_health, characters.max_health AS characters_max_health, characters.stamina AS characters_stamina, characters.max_stamina AS characters_max_stamina, characters.mana AS characters_mana, characters.max_mana AS characters_max_mana, characters.level AS characters_level, characters.experience AS characters_experience, characters.souls AS characters_souls, characters.location_id AS characters_location_id 
+FROM characters 
+WHERE characters.id = ?
+ LIMIT ? OFFSET ?
+2025-10-19 00:35:52,043 - sqlalchemy.engine.Engine - INFO - [generated in 0.00058s] (5, 1, 0)
+2025-10-19 00:35:52,067 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:37:36,039 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:37:36,040 - sqlalchemy.engine.Engine - INFO - SELECT characters.id AS characters_id, characters.name AS characters_name, characters.is_player AS characters_is_player, characters.created_at AS characters_created_at, characters.updated_at AS characters_updated_at, characters.race AS characters_race, characters.character_class AS characters_character_class, characters.faction AS characters_faction, characters.strength AS characters_strength, characters.dexterity AS characters_dexterity, characters.intelligence AS characters_intelligence, characters.constitution AS characters_constitution, characters.wisdom AS characters_wisdom, characters.charisma AS characters_charisma, characters.health AS characters_health, characters.max_health AS characters_max_health, characters.stamina AS characters_stamina, characters.max_stamina AS characters_max_stamina, characters.mana AS characters_mana, characters.max_mana AS characters_max_mana, characters.level AS characters_level, characters.experience AS characters_experience, characters.souls AS characters_souls, characters.location_id AS characters_location_id 
+FROM characters 
+WHERE characters.id = ?
+ LIMIT ? OFFSET ?
+2025-10-19 00:37:36,041 - sqlalchemy.engine.Engine - INFO - [cached since 104s ago] (5, 1, 0)
+2025-10-19 00:37:36,043 - sqlalchemy.engine.Engine - INFO - UPDATE characters SET updated_at=? WHERE characters.id = ?
+2025-10-19 00:37:36,044 - sqlalchemy.engine.Engine - INFO - [generated in 0.00024s] ('2025-10-19 04:37:36.042496', 5)
+2025-10-19 00:37:36,048 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:37:36,053 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:37:36,054 - sqlalchemy.engine.Engine - INFO - SELECT characters.id AS characters_id, characters.name AS characters_name, characters.is_player AS characters_is_player, characters.created_at AS characters_created_at, characters.updated_at AS characters_updated_at, characters.race AS characters_race, characters.character_class AS characters_character_class, characters.faction AS characters_faction, characters.strength AS characters_strength, characters.dexterity AS characters_dexterity, characters.intelligence AS characters_intelligence, characters.constitution AS characters_constitution, characters.wisdom AS characters_wisdom, characters.charisma AS characters_charisma, characters.health AS characters_health, characters.max_health AS characters_max_health, characters.stamina AS characters_stamina, characters.max_stamina AS characters_max_stamina, characters.mana AS characters_mana, characters.max_mana AS characters_max_mana, characters.level AS characters_level, characters.experience AS characters_experience, characters.souls AS characters_souls, characters.location_id AS characters_location_id 
+FROM characters 
+WHERE characters.id = ?
+2025-10-19 00:37:36,055 - sqlalchemy.engine.Engine - INFO - [generated in 0.00102s] (5,)
+2025-10-19 00:37:36,056 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:37:39,515 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:37:39,516 - sqlalchemy.engine.Engine - INFO - SELECT characters.id AS characters_id, characters.name AS characters_name, characters.is_player AS characters_is_player, characters.created_at AS characters_created_at, characters.updated_at AS characters_updated_at, characters.race AS characters_race, characters.character_class AS characters_character_class, characters.faction AS characters_faction, characters.strength AS characters_strength, characters.dexterity AS characters_dexterity, characters.intelligence AS characters_intelligence, characters.constitution AS characters_constitution, characters.wisdom AS characters_wisdom, characters.charisma AS characters_charisma, characters.health AS characters_health, characters.max_health AS characters_max_health, characters.stamina AS characters_stamina, characters.max_stamina AS characters_max_stamina, characters.mana AS characters_mana, characters.max_mana AS characters_max_mana, characters.level AS characters_level, characters.experience AS characters_experience, characters.souls AS characters_souls, characters.location_id AS characters_location_id 
+FROM characters 
+WHERE characters.id = ?
+ LIMIT ? OFFSET ?
+2025-10-19 00:37:39,516 - sqlalchemy.engine.Engine - INFO - [cached since 107.5s ago] (5, 1, 0)
+2025-10-19 00:37:39,517 - sqlalchemy.engine.Engine - INFO - UPDATE characters SET updated_at=? WHERE characters.id = ?
+2025-10-19 00:37:39,518 - sqlalchemy.engine.Engine - INFO - [cached since 3.475s ago] ('2025-10-19 04:37:39.517527', 5)
+2025-10-19 00:37:39,520 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-10-19 00:37:39,525 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-10-19 00:37:39,525 - sqlalchemy.engine.Engine - INFO - SELECT characters.id AS characters_id, characters.name AS characters_name, characters.is_player AS characters_is_player, characters.created_at AS characters_created_at, characters.updated_at AS characters_updated_at, characters.race AS characters_race, characters.character_class AS characters_character_class, characters.faction AS characters_faction, characters.strength AS characters_strength, characters.dexterity AS characters_dexterity, characters.intelligence AS characters_intelligence, characters.constitution AS characters_constitution, characters.wisdom AS characters_wisdom, characters.charisma AS characters_charisma, characters.health AS characters_health, characters.max_health AS characters_max_health, characters.stamina AS characters_stamina, characters.max_stamina AS characters_max_stamina, characters.mana AS characters_mana, characters.max_mana AS characters_max_mana, characters.level AS characters_level, characters.experience AS characters_experience, characters.souls AS characters_souls, characters.location_id AS characters_location_id 
+FROM characters 
+WHERE characters.id = ?
+2025-10-19 00:37:39,526 - sqlalchemy.engine.Engine - INFO - [cached since 3.471s ago] (5,)
+2025-10-19 00:37:39,526 - sqlalchemy.engine.Engine - INFO - COMMIT

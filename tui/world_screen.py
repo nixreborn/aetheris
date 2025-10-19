@@ -337,24 +337,24 @@ class WorldMapPanel(Static):
         Q          SHARDS OF ETERNITY              Q
         Q                                          Q
         Q    [Mountains]     [Storm]               Q
-        Q         ³             Ê                  Q
+        Q         ^             ~                  Q
         Q                                          Q
         Q   [Town]      [Forest]      [Ruins]      Q
-        Q                  `                      Q
+        Q     #            `                      Q
         Q                                          Q
         Q           [YOU]                          Q
         Q             @                            Q
         Q                                          Q
         Q  [Volcano]              [Abyss]          Q
-        Q     ²                     K              Q
+        Q     R                     K              Q
         Q                                          Q
         ZPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP]
 
         Legend:
-        @ - Your Location      - Town/City
-        ³ - Mountains        ` - Forest
-        ² - Volcano          K - Water/Abyss
-        Ê - Shard Location    - Ruins/Dungeon
+        @ - Your Location    # - Town/City
+        ^ - Mountains        ` - Forest
+        R - Volcano          K - Water/Abyss
+        ~ - Shard Location    - Ruins/Dungeon
         """
 
         yield Static(map_art, id="map-display")

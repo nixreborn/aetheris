@@ -141,50 +141,63 @@ class CharacterCreationWizard(Container):
 
     def compose(self) -> ComposeResult:
         yield Static("CHARACTER CREATION", id="wizard-title")
-
-        with ScrollableContainer(id="wizard-content"):
-            yield self.get_step_content()
+        yield ScrollableContainer(id="wizard-content")
 
         with Horizontal(id="wizard-buttons"):
             yield Button("Back", id="btn-back", classes="wizard-button")
             yield Button("Next", id="btn-next", classes="wizard-button", variant="primary")
             yield Button("Cancel", id="btn-cancel", classes="wizard-button", variant="error")
 
-    def get_step_content(self) -> Container:
-        """Get content for the current step."""
-        if self.current_step == 1:
-            return self.step_1_name()
-        elif self.current_step == 2:
-            return self.step_2_race()
-        elif self.current_step == 3:
-            return self.step_3_class()
-        elif self.current_step == 4:
-            return self.step_4_faction()
-        elif self.current_step == 5:
-            return self.step_5_stats()
-        else:
-            return self.step_6_summary()
+    def on_mount(self) -> None:
+        """Called when widget is mounted."""
+        self.refresh_step_content()
 
-    def step_1_name(self) -> Container:
+    def refresh_step_content(self) -> None:
+        """Refresh the step content."""
+        content_container = self.query_one("#wizard-content", ScrollableContainer)
+
+        # Clear all children - collect them first then remove
+        try:
+            children_to_remove = list(content_container.query("*"))
+            for child in children_to_remove:
+                try:
+                    child.remove()
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+        # Mount the appropriate step content
+        if self.current_step == 1:
+            content_container.mount(*self.step_1_name())
+        elif self.current_step == 2:
+            content_container.mount(*self.step_2_race())
+        elif self.current_step == 3:
+            content_container.mount(*self.step_3_class())
+        elif self.current_step == 4:
+            content_container.mount(*self.step_4_faction())
+        elif self.current_step == 5:
+            content_container.mount(*self.step_5_stats())
+        else:
+            content_container.mount(*self.step_6_summary())
+
+    def step_1_name(self):
         """Step 1: Name selection."""
-        container = Vertical()
-        container.mount(Static("Step 1: Choose Your Name", classes="form-label"))
-        container.mount(Static(
+        yield Static("Step 1: Choose Your Name", classes="form-label")
+        yield Static(
             "Your name will be known across the realms. Choose wisely.",
             classes="form-label"
-        ))
-        container.mount(Input(
+        )
+        yield Input(
             placeholder="Enter character name (3-50 characters)",
             id="input-name",
             classes="form-input",
             value=self.character_data.get("name", "")
-        ))
-        return container
+        )
 
-    def step_2_race(self) -> Container:
+    def step_2_race(self):
         """Step 2: Race selection."""
-        container = Vertical()
-        container.mount(Static("Step 2: Choose Your Race", classes="form-label"))
+        yield Static("Step 2: Choose Your Race", classes="form-label")
 
         races = [
             ("Human", "+1 to all stats - Versatile and adaptable"),
@@ -198,18 +211,16 @@ class CharacterCreationWizard(Container):
         for race, description in races:
             is_selected = race == self.character_data.get("race", "Human")
             style = "reverse" if is_selected else ""
-            container.mount(Button(
+            btn = Button(
                 f"{race}\n{description}",
-                id=f"race-{race.lower()}",
                 classes=f"wizard-button {style}"
-            ))
+            )
+            btn.race_name = race  # Store race name as attribute instead of ID
+            yield btn
 
-        return container
-
-    def step_3_class(self) -> Container:
+    def step_3_class(self):
         """Step 3: Class selection."""
-        container = Vertical()
-        container.mount(Static("Step 3: Choose Your Class", classes="form-label"))
+        yield Static("Step 3: Choose Your Class", classes="form-label")
 
         classes = [
             ("Warrior", "Masters of melee combat and defense"),
@@ -223,18 +234,16 @@ class CharacterCreationWizard(Container):
         for char_class, description in classes:
             is_selected = char_class == self.character_data.get("class", "Warrior")
             style = "reverse" if is_selected else ""
-            container.mount(Button(
+            btn = Button(
                 f"{char_class}\n{description}",
-                id=f"class-{char_class.lower()}",
                 classes=f"wizard-button {style}"
-            ))
+            )
+            btn.class_name = char_class  # Store class name as attribute
+            yield btn
 
-        return container
-
-    def step_4_faction(self) -> Container:
+    def step_4_faction(self):
         """Step 4: Faction selection."""
-        container = Vertical()
-        container.mount(Static("Step 4: Choose Your Faction", classes="form-label"))
+        yield Static("Step 4: Choose Your Faction", classes="form-label")
 
         factions = [
             ("Crimson Covenant", "Blood magic and primal power"),
@@ -248,42 +257,35 @@ class CharacterCreationWizard(Container):
         for faction, description in factions:
             is_selected = faction == self.character_data.get("faction", "Crimson Covenant")
             style = "reverse" if is_selected else ""
-            container.mount(Button(
+            btn = Button(
                 f"{faction}\n{description}",
-                id=f"faction-{faction.lower().replace(' ', '-')}",
                 classes=f"wizard-button {style}"
-            ))
+            )
+            btn.faction_name = faction  # Store faction name as attribute
+            yield btn
 
-        return container
 
-    def step_5_stats(self) -> Container:
+    def step_5_stats(self):
         """Step 5: Stat allocation."""
-        container = Vertical()
-        container.mount(Static("Step 5: Allocate Your Stats", classes="form-label"))
-        container.mount(Static(
+        yield Static("Step 5: Allocate Your Stats", classes="form-label")
+        yield Static(
             "You have 60 points to distribute. Each stat starts at 10.\n"
             "Stats range from 3 to 18 before racial modifiers.",
             classes="form-label"
-        ))
+        )
 
-        with Grid(id="stats-grid"):
-            for stat_name in ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]:
-                stat_value = self.character_data["stats"].get(stat_name, 10)
-                with Vertical(classes="stat-input-container"):
-                    container.mount(Static(f"{stat_name.capitalize()}:"))
-                    container.mount(Input(
-                        placeholder="3-18",
-                        id=f"stat-{stat_name}",
-                        value=str(stat_value),
-                        type="integer"
-                    ))
+        for stat_name in ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]:
+            stat_value = self.character_data["stats"].get(stat_name, 10)
+            yield Static(f"{stat_name.capitalize()}: {stat_value}")
+            yield Input(
+                placeholder="3-18",
+                id=f"stat-{stat_name}",
+                value=str(stat_value)
+            )
 
-        return container
-
-    def step_6_summary(self) -> Container:
+    def step_6_summary(self):
         """Step 6: Summary and confirmation."""
-        container = Vertical()
-        container.mount(Static("Step 6: Confirm Your Character", classes="form-label"))
+        yield Static("Step 6: Confirm Your Character", classes="form-label")
 
         char = self.character_data
         summary = (
@@ -299,13 +301,12 @@ class CharacterCreationWizard(Container):
             mod_sign = "+" if modifier >= 0 else ""
             summary += f"  {stat_name.capitalize()}: {value} ({mod_sign}{modifier})\n"
 
-        container.mount(Static(summary))
-        container.mount(Static(
+        yield Static(summary)
+        yield Static(
             "\n[bold green]Press 'Create Character' to begin your adventure![/]",
             classes="form-label"
-        ))
+        )
 
-        return container
 
 
 class CharacterSheetScreen(Screen):
@@ -553,11 +554,18 @@ class CharacterCreationScreen(Screen):
         wizard = self.query_one(CharacterCreationWizard)
 
         if event.button.id == "btn-next":
+            # Save current step data before advancing
+            if wizard.current_step == 1:
+                # Get name from input
+                try:
+                    name_input = wizard.query_one("#input-name", Input)
+                    wizard.character_data["name"] = name_input.value
+                except Exception:
+                    pass
+
             if wizard.current_step < 6:
                 wizard.current_step += 1
-                content_container = wizard.query_one("#wizard-content")
-                content_container.remove_children()
-                content_container.mount(wizard.get_step_content())
+                wizard.refresh_step_content()
             else:
                 # Create character
                 if self.on_complete:
@@ -567,36 +575,25 @@ class CharacterCreationScreen(Screen):
         elif event.button.id == "btn-back":
             if wizard.current_step > 1:
                 wizard.current_step -= 1
-                content_container = wizard.query_one("#wizard-content")
-                content_container.remove_children()
-                content_container.mount(wizard.get_step_content())
+                wizard.refresh_step_content()
 
         elif event.button.id == "btn-cancel":
             self.action_cancel()
 
         # Handle race selection
-        elif event.button.id and event.button.id.startswith("race-"):
-            race = event.button.id.replace("race-", "").capitalize()
-            wizard.character_data["race"] = race
-            content_container = wizard.query_one("#wizard-content")
-            content_container.remove_children()
-            content_container.mount(wizard.get_step_content())
+        elif hasattr(event.button, "race_name"):
+            wizard.character_data["race"] = event.button.race_name
+            wizard.refresh_step_content()
 
         # Handle class selection
-        elif event.button.id and event.button.id.startswith("class-"):
-            char_class = event.button.id.replace("class-", "").capitalize()
-            wizard.character_data["class"] = char_class
-            content_container = wizard.query_one("#wizard-content")
-            content_container.remove_children()
-            content_container.mount(wizard.get_step_content())
+        elif hasattr(event.button, "class_name"):
+            wizard.character_data["class"] = event.button.class_name
+            wizard.refresh_step_content()
 
         # Handle faction selection
-        elif event.button.id and event.button.id.startswith("faction-"):
-            faction = event.button.id.replace("faction-", "").replace("-", " ").title()
-            wizard.character_data["faction"] = faction
-            content_container = wizard.query_one("#wizard-content")
-            content_container.remove_children()
-            content_container.mount(wizard.get_step_content())
+        elif hasattr(event.button, "faction_name"):
+            wizard.character_data["faction"] = event.button.faction_name
+            wizard.refresh_step_content()
 
     def action_cancel(self) -> None:
         """Cancel character creation."""

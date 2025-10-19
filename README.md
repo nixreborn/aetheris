@@ -462,3 +462,381 @@ python -m admin.cli backup-db
 python -m admin.cli world-stats
 ```
 
+---
+
+## Project Structure
+
+```
+shards_of_eternity/
+
+   admin/                  # Admin CLI and tools
+      __init__.py
+      cli.py             # Command-line interface
+
+   characters/            # Character system
+      __init__.py
+      character.py       # Character creation and management
+      stats.py          # Stat calculations
+      inventory.py      # Inventory system
+
+   combat/               # Combat system
+      __init__.py
+      system.py        # Main combat engine
+      abilities.py     # Special abilities
+      enemies.py       # Enemy definitions
+
+   config/              # Configuration
+      __init__.py
+      settings.py      # Settings management (Pydantic)
+
+   database/            # Database layer
+      __init__.py
+      models.py        # SQLAlchemy ORM models
+      migrations.py    # Database migrations
+
+   llm/                 # LLM integration
+      __init__.py
+      generator.py     # Main LLM generator
+      providers.py     # Provider-specific clients
+      prompts.py       # Prompt templates
+
+   network/             # Networking
+      __init__.py
+      master_server.py # Master server for discovery
+      peer.py          # P2P client
+      protocol.py      # Network protocol
+
+   tui/                 # Text User Interface
+      __init__.py
+      main_screen.py   # Main menu
+      character_screen.py
+      combat_screen.py
+      world_screen.py
+
+   world/               # World systems
+      __init__.py
+      locations.py     # Location definitions
+      shards.py        # Crystal Shard system
+      factions.py      # Faction system
+      reality.py       # Reality alteration system
+
+   utils/               # Utilities
+      __init__.py
+      logger.py        # Logging configuration
+      crypto.py        # Encryption utilities
+
+   .env.example         # Example environment variables
+   main.py             # Main game entry point
+   run_server.py       # Server startup script
+   requirements.txt    # Python dependencies
+   README.md          # This file
+```
+
+---
+
+## Development
+
+### Setting Up Development Environment
+
+1. **Install Development Dependencies**
+
+```bash
+pip install -r requirements.txt
+pip install pytest pytest-asyncio black
+```
+
+2. **Enable Debug Mode**
+
+In `.env`:
+```env
+DEBUG_MODE=true
+LOG_LEVEL=DEBUG
+```
+
+3. **Run Tests**
+
+```bash
+pytest
+```
+
+### Code Style
+
+This project uses **Black** for code formatting:
+
+```bash
+black .
+```
+
+### Database Schema
+
+The game uses SQLAlchemy ORM with the following main models:
+
+- **Character** - Player and NPC data
+- **InventoryItem** - Character inventory
+- **CrystalShard** - The 12 legendary shards
+- **ShardOwnership** - Shard capture history
+- **WorldState** - Global world state
+- **Location** - Areas in the game
+- **CharacterMemory** - Event and decision log
+- **Party** - Multiplayer parties
+- **WorldEvent** - Major events log
+
+### Adding New Content
+
+#### Create a New Enemy
+
+Edit `combat/enemies.py`:
+
+```python
+def create_dragon_boss():
+    return Character(
+        name="Ancient Dragon",
+        race=RaceType.DRAGONBORN,
+        character_class=ClassType.WARRIOR,
+        faction=FactionType.GOLDEN_ORDER,
+        level=20,
+        strength=25,
+        constitution=22,
+        # ... more stats
+    )
+```
+
+#### Add a New Location
+
+Edit `world/locations.py`:
+
+```python
+location = Location(
+    name="Cursed Forest",
+    description="Dark trees loom overhead...",
+    zone_type="wilderness",
+    danger_level=8,
+    faction_controlled=FactionType.SHADOWBORN
+)
+```
+
+#### Create Custom Abilities
+
+Edit `combat/abilities.py`:
+
+```python
+class FireballAbility(Ability):
+    name = "Fireball"
+    mana_cost = 30
+    damage_multiplier = 2.5
+    status_effect = StatusEffect.BURN
+```
+
+---
+
+## Contributing
+
+We welcome contributions! Here's how to help:
+
+### Contribution Guidelines
+
+1. **Fork the Repository**
+
+```bash
+git clone https://github.com/yourusername/shards_of_eternity.git
+cd shards_of_eternity
+git checkout -b feature/your-feature-name
+```
+
+2. **Make Your Changes**
+
+- Follow existing code style (use Black formatter)
+- Add tests for new features
+- Update documentation as needed
+- Keep commits atomic and well-described
+
+3. **Test Your Changes**
+
+```bash
+pytest
+python main.py  # Manual testing
+```
+
+4. **Submit a Pull Request**
+
+- Describe your changes clearly
+- Reference any related issues
+- Ensure all tests pass
+
+### Areas We Need Help
+
+- Additional enemy types and bosses
+- More location descriptions
+- Balance tweaking for combat
+- UI/UX improvements
+- LLM prompt optimization
+- Network optimization
+- Additional factions and abilities
+- Quest system implementation
+- Crafting system
+- Trading system
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2025 Shards of Eternity Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## Credits
+
+### Development Team
+
+- **Lead Developer**: Matt Olander 
+- **Game Design**: J.T. Nixon 
+
+### Technologies & Libraries
+
+- **[Python](https://www.python.org/)** - Core programming language
+- **[SQLAlchemy](https://www.sqlalchemy.org/)** - Database ORM
+- **[Textual](https://textual.textualize.io/)** - Terminal UI framework
+- **[OpenAI](https://openai.com/)** - LLM provider
+- **[Anthropic](https://www.anthropic.com/)** - Claude LLM provider
+- **[aiohttp](https://docs.aiohttp.org/)** - Async HTTP client/server
+- **[websockets](https://websockets.readthedocs.io/)** - WebSocket implementation
+- **[Pydantic](https://pydantic-docs.helpmanual.io/)** - Settings validation
+- **[cryptography](https://cryptography.io/)** - Security and encryption
+
+### Inspiration
+
+Inspired by:
+- **Dark Souls** series - Combat mechanics and difficulty
+- **Destiny** - Shared world, raids, and loot
+- **AI Dungeon** - LLM-powered storytelling
+- **NetHack** - Procedural generation and complexity
+- **EVE Online** - Player-driven economy and politics
+
+### Special Thanks
+
+- The Python community for incredible tools and libraries
+- OpenAI and Anthropic for making LLMs accessible
+- Textual team for the amazing TUI framework
+- All contributors and testers
+
+---
+
+## Roadmap
+
+### Version 1.0 (Current)
+
+- Core character system
+- Souls-like combat
+- Crystal Shard mechanics
+- Basic multiplayer
+- LLM integration
+
+### Version 1.1 (Planned)
+
+- Quest system
+- Crafting and enchanting
+- Trading between players
+- Guild system
+- More enemies and bosses
+
+### Version 2.0 (Future)
+
+- Full world map
+- PvP arenas
+- Raid bosses (6+ players)
+- Housing system
+- Advanced AI behaviors
+- Mobile companion app
+
+---
+
+## Support
+
+### Getting Help
+
+- **Documentation**: Check this README and code comments
+- **Issues**: [GitHub Issues](https://github.com/yourusername/shards_of_eternity/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/shards_of_eternity/discussions)
+- **Discord**: [Join our server](#) (coming soon)
+
+### Reporting Bugs
+
+Please include:
+- Python version
+- Operating system
+- Steps to reproduce
+- Expected vs actual behavior
+- Relevant log files (`logs/shards.log`)
+
+### Feature Requests
+
+We love new ideas! Open an issue with:
+- Clear description of the feature
+- Use cases and benefits
+- Possible implementation approach
+
+---
+
+## Frequently Asked Questions
+
+**Q: Do I need an OpenAI/Anthropic API key?**
+
+A: No, the game works without LLM integration. Set `LLM_ENABLED=false` in `.env` to use fallback text. You can also use local LLM servers.
+
+**Q: Can I play offline?**
+
+A: Yes! Single-player mode works completely offline (except for LLM API calls if enabled).
+
+**Q: How do I host a server for friends?**
+
+A: Run `python run_server.py --host 0.0.0.0` and share your IP address. Make sure port 8888 is open.
+
+**Q: Is there a level cap?**
+
+A: Currently level 25, but this can be increased in future versions.
+
+**Q: What happens when I die?**
+
+A: Like Dark Souls, you lose carried souls (currency) but keep items and progress. You can recover souls by returning to where you died.
+
+**Q: Can I change factions?**
+
+A: Faction is chosen at character creation and is permanent (for now).
+
+---
+
+<div align="center">
+
+**Shards of Eternity**
+
+*Reality is fragile. The shards await. Your legend begins.*
+
+[GitHub](https://github.com/yourusername/shards_of_eternity) " [Documentation](#) " [Discord](#)
+
+Made with passion and Python
+
+</div>

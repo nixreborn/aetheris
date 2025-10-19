@@ -92,13 +92,23 @@ class PlayerStatsPanel(Static):
         char = self.character_data
 
         with Vertical(id="stats-container"):
+            # Handle both old and new data structures
+            level = char.get('level') or char.get('progression', {}).get('level', 1)
+            souls = char.get('souls') or char.get('progression', {}).get('souls', 0)
+            health = char.get('health') or char.get('resources', {}).get('health', 100)
+            max_health = char.get('max_health') or char.get('resources', {}).get('max_health', 100)
+            stamina = char.get('stamina') or char.get('resources', {}).get('stamina', 100)
+            max_stamina = char.get('max_stamina') or char.get('resources', {}).get('max_stamina', 100)
+            mana = char.get('mana') or char.get('resources', {}).get('mana', 50)
+            max_mana = char.get('max_mana') or char.get('resources', {}).get('max_mana', 50)
+
             yield Static(
-                f"[bold cyan]{char['name']}[/] - Lvl {char['level']} {char['race']} {char['class']} | "
-                f"[yellow]{char['faction']}[/] | [gold1]Souls: {char['souls']}[/]"
+                f"[bold cyan]{char['name']}[/] - Lvl {level} {char['race']} {char['class']} | "
+                f"[yellow]{char['faction']}[/] | [gold1]Souls: {souls}[/]"
             )
-            yield StatBar("Health", char["health"], char["max_health"], "red")
-            yield StatBar("Stamina", char["stamina"], char["max_stamina"], "yellow")
-            yield StatBar("Mana", char["mana"], char["max_mana"], "blue")
+            yield StatBar("Health", health, max_health, "red")
+            yield StatBar("Stamina", stamina, max_stamina, "yellow")
+            yield StatBar("Mana", mana, max_mana, "blue")
 
     def update_character(self, character_data: Dict[str, Any]) -> None:
         """Update the displayed character data."""

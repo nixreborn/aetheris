@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(tree -L 2 -I '__pycache__|*.pyc|.git' .)"
+      "Bash(python -m py_compile tui/character_screen.py)",
+      "Bash(timeout 5 python main.py)",
+      "Bash(python verify_installation.py)",
+      "Bash(python -m py_compile tui/main_screen.py)"
     ],
     "deny": [],
     "ask": []

@@ -53,7 +53,7 @@ from config.settings import get_settings
 # TUI screens
 from tui.main_screen import MainGameScreen
 from tui.character_screen import CharacterCreationScreen, CharacterSheetScreen
-from tui.world_screen import WorldMapScreen
+from tui.world_screen import WorldScreen
 from tui.combat_screen import CombatScreen
 
 # Setup logging
@@ -607,28 +607,27 @@ class CharacterSelectionScreen(Screen):
             # Create character in database
             try:
                 creator = CharacterCreator()
-                with get_db_session() as session:
-                    # Create base stats
-                    base_stats = {
-                        "strength": char_data["stats"]["strength"],
-                        "dexterity": char_data["stats"]["dexterity"],
-                        "constitution": char_data["stats"]["constitution"],
-                        "intelligence": char_data["stats"]["intelligence"],
-                        "wisdom": char_data["stats"]["wisdom"],
-                        "charisma": char_data["stats"]["charisma"]
-                    }
+                # Create base stats
+                base_stats = {
+                    "strength": char_data["stats"]["strength"],
+                    "dexterity": char_data["stats"]["dexterity"],
+                    "constitution": char_data["stats"]["constitution"],
+                    "intelligence": char_data["stats"]["intelligence"],
+                    "wisdom": char_data["stats"]["wisdom"],
+                    "charisma": char_data["stats"]["charisma"]
+                }
 
-                    character = creator.create_character(
-                        session=session,
-                        name=char_data["name"],
-                        race=RaceType[char_data["race"].upper()],
-                        character_class=ClassType[char_data["class"].upper()],
-                        faction=FactionType[char_data["faction"].upper().replace(" ", "_")],
-                        base_stats=base_stats
-                    )
+                character = creator.create_character(
+                    name=char_data["name"],
+                    race=RaceType[char_data["race"].upper()],
+                    character_class=ClassType[char_data["class"].upper()],
+                    faction=FactionType[char_data["faction"].upper().replace(" ", "_")],
+                    stats=base_stats,
+                    description=char_data.get("description", "")
+                )
 
-                    self.app.notify(f"Character '{character.name}' created successfully!", severity="success")
-                    self.load_characters()
+                self.app.notify(f"Character '{character.name}' created successfully!", severity="success")
+                self.load_characters()
             except Exception as e:
                 logger.error(f"Error creating character: {e}")
                 self.app.notify(f"Error creating character: {e}", severity="error")
