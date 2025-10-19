@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree -L 2 -I '__pycache__|*.pyc|.git' .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

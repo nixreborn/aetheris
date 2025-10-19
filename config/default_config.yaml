@@ -1,0 +1,53 @@
+# Shards of Eternity - Default Configuration
+
+game:
+  title: "Shards of Eternity"
+  max_players_per_party: 4
+  total_crystal_shards: 12
+  enable_pvp: true
+
+llm:
+  enabled: true
+  provider: "openai"  # Options: openai, anthropic, local
+  model: "gpt-4"  # or claude-3-5-sonnet-20241022, etc.
+  temperature: 0.8
+  max_tokens: 500
+  timeout: 30
+  # For local models (e.g., Ollama)
+  local_endpoint: "http://localhost:11434"
+  local_model: "llama2"
+
+network:
+  master_server:
+    enabled: true
+    host: "localhost"
+    port: 8888
+    use_ssl: false
+  p2p:
+    enabled: true
+    discovery_port: 9000
+    max_peers: 50
+    encryption_enabled: true
+
+database:
+  type: "sqlite"  # Options: sqlite, postgresql
+  sqlite_path: "data/shards_of_eternity.db"
+  # For PostgreSQL:
+  # postgres_url: "postgresql://user:password@localhost/shards_db"
+
+world:
+  starting_location: "ashen_crossroads"
+  permadeath: false
+  shard_respawn_time: 3600  # seconds
+  aetherfall_threshold: 12  # shards needed to trigger
+
+combat:
+  base_stamina: 100
+  stamina_regen_rate: 5  # per second
+  dodge_cost: 20
+  light_attack_cost: 15
+  heavy_attack_cost: 35
+
+admin:
+  enable_admin_commands: true
+  admin_token: "change_this_in_production"
