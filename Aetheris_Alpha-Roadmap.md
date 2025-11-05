@@ -66,7 +66,7 @@ A **playable, testable build** that demonstrates:
 **Duration:** Week 1  
 **Network Stability Milestone:** N/A (foundational work)
 
-These discrepancies between the 'Aetheris - Lore.md' document and the codebase must be resolved FIRST.
+These discrepancies between the aetheris-lore.json document and the codebase must be resolved FIRST.
 
 #### Task 0.1: Rename Factions
 
@@ -189,7 +189,7 @@ RACE_STATS = {
 
 **Decision:** Keep current names (Option A), document them in lore
 
-**Action:** Update 'Aetheris - Lore.md' to include current shard names and assign 2 shards per faction:
+**Action:** Update aetheris-lore.json to include current shard names and assign 2 shards per faction:
 
 - **Celestial Order:** Dawnbringer (Light) + Lifeseed (Life)
 - **Crimson Legion:** Phoenix Flame (Fire) + Reaper’s Fragment (Death)
@@ -201,7 +201,7 @@ RACE_STATS = {
 **Files to Update:**
 
 - `/models/shard.py` - Assign faction_affinity to each shard
-- 'Aetheris - Lore.md' lore document
+- aetheris-lore.json lore document
 
 -----
 
@@ -209,7 +209,7 @@ RACE_STATS = {
 
 **File:** `/data/lore_schema.json` (NEW)
 
-Create a versioned JSON schema that enforces consistency between 'Aetheris - Lore.md' and codebase.
+Create a versioned JSON schema that enforces consistency between aetheris-lore.json and codebase.
 
 ```json
 {
@@ -1437,7 +1437,7 @@ class ContextManager:
         
     def inject_location_lore(location_id):
         """
-        Pull location description from 'Aetheris - Lore.md' (400 tokens):
+        Pull location description from aetheris-lore.json (400 tokens):
         - Detailed description
         - Current state (based on reality)
         - NPCs present
@@ -1593,7 +1593,7 @@ Make it ominous and mysterious. End with a question or choice.
 
 -----
 
-#### Task 6.3: Integrate 'Aetheris - Lore.md' as Knowledge Base (Week 11)
+#### Task 6.3: Integrate aetheris-lore.json as Knowledge Base (Week 11)
 
 **File:** `/llm/lore_loader.py` (NEW)
 
@@ -1603,7 +1603,7 @@ from pathlib import Path
 
 class LoreDatabase:
     """
-    Load and index 'Aetheris - Lore.md' content for quick retrieval
+    Load and index aetheris-lore.json content for quick retrieval
     """
     
     def __init__(self):
@@ -1664,7 +1664,7 @@ import rtfparse  # or use pandoc
 
 def convert_rtf_to_json():
     """
-    1. Parse 'Aetheris - Lore.md'
+    1. Parse aetheris-lore.json
     2. Extract sections by markdown headers
     3. Index by keys (location names, NPC names, etc.)
     4. Save as /data/lore_database.json
